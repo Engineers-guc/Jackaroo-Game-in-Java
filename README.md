@@ -33,6 +33,8 @@ Jackaroo is a multiplayer card game that combines strategy and luck. Players use
 - **Five**: Move any marble 5 steps forward
 - **Six**: Move one marble 6 steps forward
 - **Seven**: Move two marbles a total of 7 steps or one marble 7 steps forward
+  ![image](https://github.com/user-attachments/assets/8e235e12-84b2-48b6-ba9b-8f02e2d7a862)
+
 - **Eight**: Move one marble 8 steps forward
 - **Nine**: Move one marble 9 steps forward
 - **Ten**: Discard a random card from next player or move 10 steps forward
