@@ -1,260 +1,211 @@
-Jackaroo Java Game
+# Jackaroo Java Game
 
 A strategic card game where players compete to move their marbles around the board using playing cards with special abilities.
 
-GameFiles
+---
+
+## Game Files
 
 Download the game files for the best experience:
-GameFiles Download
+[Download Game Files](https://drive.google.com/file/d/1xEStqFRyrrj3SGF4W7-zosbdiKT924Hd/view?usp=sharing)
 
-Gameplay
+## Gameplay
 
 Watch the gameplay demo:
-Gameplay Video
+[Gameplay Video](https://drive.google.com/file/d/13SRTS8yHRUVVbRUT6kDLSzcZ4NvuA0QU/view?usp=sharing)
 
-Game Overview
+## Game Overview
 
-Jackaroo is a multiplayer card game that combines strategy and luck. Players use a deck of playing cards to move their marbles around the board, with each card having unique abilities and movement rules.
+Jackaroo is a multiplayer card game that blends strategy with luck. Players use a special deck of cards to move their marbles around a themed board, each card enabling specific movement rules or actions.
 
-Features
+## Features
 
-Multiplayer gameplay with support for human and AI players
+* Multiplayer support for human and AI players
+* Strategic, card-driven gameplay
+* Unique card abilities for each rank
+* Marble movement mechanics with zones (Safe/Home)
+* Western-themed board and animations
+* Wild West Story Mode: Immerse yourself in a narrative-driven campaign with themed scenarios and objectives
+* Responsive and interactive user interface
+* Draw and discard system
 
-Strategic card-based movement system
+## Card Abilities
 
-Special card abilities (Ace, King, Queen, Jack, etc.)
+| Card              | Ability                                                             |
+| ----------------- | ------------------------------------------------------------------- |
+| **Ace**           | Field a marble from the Home Zone or move one marble 1 step forward |
+| **Two**           | Move one marble 2 steps forward                                     |
+| **Three**         | Move one marble 3 steps forward                                     |
+| **Four**          | Move one marble 4 steps backward                                    |
+| **Five**          | Move any marble 5 steps forward                                     |
+| **Six**           | Move one marble 6 steps forward                                     |
+| **Seven**         | Move two marbles a total of 7 steps or one marble 7 steps forward   |
+| **Eight**         | Move one marble 8 steps forward                                     |
+| **Nine**          | Move one marble 9 steps forward                                     |
+| **Ten**           | Discard a random card from next player or move 10 steps forward     |
+| **Jack**          | Swap marbles or move 11 steps forward                               |
+| **Queen**         | Discard a random card from a random player or move 12 steps forward |
+| **King**          | Field a marble or move 13 steps forward (killing marbles in path)   |
+| **Marble Burner** | Send an opponent's marble home                                      |
+| **Marble Saver**  | Move your marble to a random safe zone                              |
 
-Unique marble movement mechanics
+## Installation
 
-Western-themed game board and graphics
+### IntelliJ IDEA
 
-Interactive game interface
+1. **Extract zip file and open the project**:
 
-Card discard and draw mechanics
+   * Navigate to **File > Open...** and select the project directory.
+   * Ensure JDK 11 or higher is selected.
+2. **Set up JavaFX**:
 
-Safe zones and home zones for marbles
+   * Download the JavaFX SDK from the [Gluon JavaFX download page](https://gluonhq.com/products/javafx/).
+   * Extract the SDK.
+   * Go to **File > Project Structure... > Libraries** and add the `lib` directory.
+   * Add VM options under **Run > Edit Configurations...**:
 
-Card Abilities
+     ```
+     --module-path /path_to_javafx_lib --add-modules javafx.controls,javafx.fxml,javafx.media
+     ```
+3. **Build and run**:
 
-Card
+   * Build: **Build > Build Project**
+   * Run: Select the main class and click **Run**
 
-Ability
+### Eclipse
 
-Ace
+1. **Import zip file into Eclipse**:
 
-Field a marble from the Home Zone or move one marble 1 step forward
+   * Go to **File > Import... > Existing Projects into Workspace**
+   * Choose the zip directory
+2. **Set up JavaFX**:
 
-Two
+   * Follow the same JavaFX SDK setup as above
+   * Go to **Project > Properties > Java Build Path > Modulepath > Add External JARs...** and add JARs from `lib`
+   * Add VM options under **Run > Run Configurations...**:
 
-Move one marble 2 steps forward
+     ```
+     --module-path /path_to_javafx_lib --add-modules javafx.controls,javafx.fxml,javafx.media
+     ```
+3. **Build and run**:
 
-Three
+   * Right-click project > **Build Project**
+   * Select the main class and click **Run**
 
-Move one marble 3 steps forward
+## Dependencies
 
-Four
+* **JavaFX**: UI framework, required for visuals and media
+* **JDK 11 or higher**: Required to build and run the project
 
-Move one marble 4 steps backward
+(Refer to the Bro Code JavaFX Playlist for detailed JavaFX setup guidance.)
 
-Five
+## How to Play
 
-Move any marble 5 steps forward
+1. Launch the game and choose the number of players
+2. Each player gets a hand of cards and a set of marbles
+3. On each turn:
 
-Six
+   * Play a card
+   * Apply the card's movement rule
+   * Draw a new card
+4. The winner is the first to move all marbles into the Safe Zone
 
-Move one marble 6 steps forward
+### Controls
 
-Seven
+* **Mouse Click**: Select cards, buttons, and interact with UI
+* **Marble Selection**: Enter target cell index in "Select Marbles" panel
+* **F Key**: Field a marble instantly (when playing Ace or King)
+* **X Key**: Terminate the current game session
 
-Move two marbles a total of 7 steps or one marble 7 steps forward
+## Technical Details
 
-Eight
+### Core Technologies
 
-Move one marble 8 steps forward
+* **Java 23** for application logic
+* **JavaFX**:
 
-Nine
+  * FXML layouts
+  * CSS styling
+  * MediaPlayer integration
+  * Animation and graphics APIs
 
-Move one marble 9 steps forward
+### Architecture & Design Patterns
 
-Ten
+* **MVC Architecture**:
 
-Discard a random card from next player or move 10 steps forward
+  * Model: Game logic and state
+  * View: UI built with JavaFX
+  * Controller: Handles input and game flow
+* **OOP Principles**:
 
-Jack
+  * Inheritance, polymorphism, encapsulation, abstraction
 
-Swap marbles or move 11 steps forward
+### Feature Implementation
 
-Queen
+* **Exception Handling**:
 
-Discard a random card from a random player or move 12 steps forward
+  * Custom game errors
+  * Validation for moves and inputs
+* **Concurrency**:
 
-King
+  * Multithreaded AI players
+  * Background task execution
+* **Data Management**:
 
-Field a marble or move 13 steps forward (killing marbles in path)
+  * Game state serialization
+  * Configurations and player stats
 
-Marble Burner
+### UI/UX Components
 
-Send an opponent's marble home
+* **Custom Controls**:
 
-Marble Saver
+  * Card viewer
+  * Animated marble transitions
+* **Effects**:
 
-Move your marble to a random safe zone
+  * Card flips, marble kills
+  * Endgame animations
+* **Responsive Design**:
 
-Installation
+  * Dynamic scaling and multi-resolution support
 
-IntelliJ IDEA
+### AI Behavior
 
-Extract zip file and open the project:
+* **Strategic Planning**:
 
-Go to File > Open... and select the project directory.
+  * Risk evaluation
+  * Turn-based decision trees
 
-Ensure the correct JDK is set (JDK 11 or higher).
+### Testing & QA
 
-Set up JavaFX:
+* **Unit Testing** with JUnit
+* **Integration Testing** for game flow and multiplayer
+* **Performance Optimization**:
 
-Download the JavaFX SDK from the Gluon JavaFX download page.
+  * Efficient memory usage
+  * Smooth animations
 
-Extract the SDK to a directory on your computer.
+## Contributing
 
-Go to File > Project Structure... > Libraries and add the JavaFX lib directory.
+We welcome community contributions! You can:
 
-Go to Run > Edit Configurations... and add the following VM options:
+* Submit issues and bug reports
+* Open Pull Requests with improvements
 
---module-path /path_to_javafx_lib --add-modules javafx.controls,javafx.fxml,javafx.media
+Please follow Java coding best practices and include documentation where needed.
 
-Build and run:
+## Credits
 
-Build: Build > Build Project
+Developed for CSEN401 at the German University in Cairo.
 
-Run: Select the main class and click the run button.
+### Game Development Team
 
-Eclipse
+* Zeyad Ahmed Elsawi
+* Mark Raymond Takla
+* Jonathan Maged Daksis
+* Aly Ahmed Aly
 
-Import zip file into Eclipse:
+## Contact
 
-Go to File > Import... > Existing Projects into Workspace.
-
-Select the zip file.
-
-Set up JavaFX:
-
-Download and extract the JavaFX SDK as above.
-
-Go to Project > Properties > Java Build Path > Libraries > Modulepath > Add External JARs... and add all JARs from the JavaFX lib directory.
-
-Go to Run > Run Configurations... and add VM options:
-
---module-path /path_to_javafx_lib --add-modules javafx.controls,javafx.fxml,javafx.media
-
-Build and run:
-
-Build: Right-click the project > Build Project
-
-Run: Select the main class and click run.
-
-Dependencies
-
-JavaFX: Required for the UI. Download from the Gluon page.
-
-JDK 11 or higher: Java Development Kit for building and running the game.
-
-For more on setting up JavaFX, refer to the Bro Code JavaFX Playlist.
-
-How to Play
-
-Start the game and select the number of players
-
-Each player receives a set of marbles and cards
-
-On your turn:
-
-Play a card from your hand
-
-Use the card's ability to move marbles
-
-Draw a new card
-
-The first player to get all their marbles to the Safe Zone wins
-
-Controls
-
-Mouse Click: Select and play cards, interact with menu buttons
-
-Select Marbles: Input the target cell index in the "Select Marbles" panel to choose which marble to move
-
-Fielding Shortcut (f): Instantly field a marble when playing an Ace or King
-
-Terminate Game (x): Exit the current session immediately
-
-Technical Details
-
-Core Technologies
-
-Java Development: Built using Java 23
-
-JavaFX Framework: Scene Builder, FXML, CSS styling, MediaPlayer, Graphics & Animation APIs
-
-Architecture & Design Patterns
-
-MVC: Model (game logic), View (JavaFX UI), Controller (event handling)
-
-OOP: Inheritance, polymorphism, encapsulation, abstraction
-
-Key Features Implementation
-
-Exception Handling: Custom exceptions, input validation
-
-Concurrency: Threads for AI, asynchronous events
-
-Data Management: Serialization for game state, player stats tracking
-
-UI/UX Components
-
-Custom card and marble controls
-
-Animations for card flips and marble moves
-
-Responsive layouts and scaling
-
-AI Implementation
-
-State evaluation and strategic decision-making
-
-Testing & QA
-
-JUnit for unit tests
-
-Integration and performance testing
-
-Credits
-
-Contributing
-
-We welcome contributions to improve the Jackaroo game! Feel free to:
-
-Submit bug reports or feature requests using the Issues tab
-
-Fork the repository and open a Pull Request with your improvements
-
-Please follow standard Java coding conventions and provide clear documentation for any new features.
-
-If you're unsure where to start, feel free to reach out via the Contact section.
-
-German University in Cairo (CSEN401 Department)
-
-Game Development by
-
-Zeyad Ahmed Elsawi
-
-Mark Raymond Takla
-
-Jonathan Maged Daksis
-
-Aly Ahmed Aly
-
-Contact
-
-Mark: https://www.linkedin.com/in/mark-takla/
-
-Zeyad: https://www.linkedin.com/in/zeyad-elsawi-0a0063284/
-
+* **Mark**: [LinkedIn](https://www.linkedin.com/in/mark-takla/)
+* **Zeyad**: [LinkedIn](https://www.linkedin.com/in/zeyad-elsawi-0a0063284/)
