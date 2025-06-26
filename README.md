@@ -1,3 +1,5 @@
+
+![image](https://github.com/user-attachments/assets/7b9bbfd5-8ef2-4351-8f80-b4997b1c9623)
 # Jackaroo Java Game
 
 A strategic card game where players compete to move their marbles around the board using playing cards with special abilities.
